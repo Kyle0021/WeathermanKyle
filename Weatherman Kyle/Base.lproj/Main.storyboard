@@ -240,7 +240,7 @@
                                 </cells>
                             </collectionView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="akJ-gT-tB4">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <activityIndicatorView opaque="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="9Um-fo-IE3">
                                         <rect key="frame" x="188.5" y="391" width="37" height="37"/>
@@ -250,7 +250,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.62033770161290325" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="9Um-fo-IE3" firstAttribute="centerX" secondItem="akJ-gT-tB4" secondAttribute="centerX" id="Gj5-16-usd"/>
-                                    <constraint firstItem="9Um-fo-IE3" firstAttribute="centerY" secondItem="akJ-gT-tB4" secondAttribute="centerY" constant="0.5" id="HWP-GU-WuW"/>
+                                    <constraint firstItem="9Um-fo-IE3" firstAttribute="centerY" secondItem="akJ-gT-tB4" secondAttribute="centerY" constant="-38.5" id="HWP-GU-WuW"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -261,8 +261,8 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vnw-Wc-0yB" secondAttribute="trailing" id="ALa-8L-HLz"/>
                             <constraint firstItem="j7x-fn-0Eo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="B2Q-Zw-Qoe"/>
                             <constraint firstItem="04V-eS-o5Z" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Hea-IY-kad"/>
-                            <constraint firstItem="akJ-gT-tB4" firstAttribute="top" secondItem="vnw-Wc-0yB" secondAttribute="bottom" constant="-360" id="Qzc-PS-yy9"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="akJ-gT-tB4" secondAttribute="bottom" id="Utd-3r-6gj"/>
+                            <constraint firstItem="akJ-gT-tB4" firstAttribute="top" secondItem="vnw-Wc-0yB" secondAttribute="bottom" constant="-404" id="Qzc-PS-yy9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="akJ-gT-tB4" secondAttribute="bottom" constant="-34" id="Utd-3r-6gj"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="j7x-fn-0Eo" secondAttribute="trailing" id="dBL-fl-nSW"/>
                             <constraint firstItem="akJ-gT-tB4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ejD-Xo-GQq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="04V-eS-o5Z" secondAttribute="trailing" id="frM-wb-67N"/>
