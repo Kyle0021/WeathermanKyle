@@ -7,13 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6DD2834422CE7CAA00215CB7 /* WeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD2834322CE7CAA00215CB7 /* WeatherCell.swift */; };
+		6DD2834622CEABD700215CB7 /* Raining.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD2834522CEABD700215CB7 /* Raining.png */; };
+		6DD2834A22CEAFAC00215CB7 /* PartlyCloudy.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD2834922CEAFAC00215CB7 /* PartlyCloudy.png */; };
+		6DD2834C22CEAFF500215CB7 /* PartlyCloudNight.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD2834B22CEAFF500215CB7 /* PartlyCloudNight.png */; };
+		6DD2834E22CEB0F200215CB7 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD2834D22CEB0F200215CB7 /* Default.png */; };
+		6DD2835222CEC11800215CB7 /* baseline_refresh_white_36dp.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD2835122CEC11800215CB7 /* baseline_refresh_white_36dp.png */; };
+		6DD2835422CEC51100215CB7 /* GetWeatherImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD2835322CEC51100215CB7 /* GetWeatherImage.swift */; };
 		6DD7A67622CD418D00D7DF7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD7A67522CD418D00D7DF7D /* AppDelegate.swift */; };
-		6DD7A67822CD418D00D7DF7D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD7A67722CD418D00D7DF7D /* ViewController.swift */; };
+		6DD7A67822CD418D00D7DF7D /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD7A67722CD418D00D7DF7D /* Main.swift */; };
 		6DD7A67B22CD418D00D7DF7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DD7A67922CD418D00D7DF7D /* Main.storyboard */; };
 		6DD7A67E22CD418D00D7DF7D /* Weatherman_Kyle.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6DD7A67C22CD418D00D7DF7D /* Weatherman_Kyle.xcdatamodeld */; };
 		6DD7A68022CD418E00D7DF7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DD7A67F22CD418E00D7DF7D /* Assets.xcassets */; };
 		6DD7A68322CD418E00D7DF7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DD7A68122CD418E00D7DF7D /* LaunchScreen.storyboard */; };
 		6DD7A68E22CD418E00D7DF7D /* Weatherman_KyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD7A68D22CD418E00D7DF7D /* Weatherman_KyleTests.swift */; };
+		6DD7A69C22CD431B00D7DF7D /* RestConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD7A69B22CD431B00D7DF7D /* RestConnector.swift */; };
+		6DD7A69E22CD442F00D7DF7D /* RestDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD7A69D22CD442F00D7DF7D /* RestDelegate.swift */; };
+		6DD7A6A122CDE1C800D7DF7D /* thermometer1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD7A6A022CDE1C800D7DF7D /* thermometer1.png */; };
+		6DD7A6A322CDE31800D7DF7D /* Clouds Background.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6DD7A6A222CDE31800D7DF7D /* Clouds Background.jpeg */; };
+		6DD7A6A622CDF10600D7DF7D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DD7A6A522CDF10600D7DF7D /* CoreLocation.framework */; };
+		6DD7A6A822CDFA2000D7DF7D /* Sunny.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD7A6A722CDFA2000D7DF7D /* Sunny.png */; };
+		6DD7A6AA22CDFBB000D7DF7D /* OccasionalSnow.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD7A6A922CDFBB000D7DF7D /* OccasionalSnow.png */; };
+		6DD7A6AC22CDFBD900D7DF7D /* NightMoon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD7A6AB22CDFBD900D7DF7D /* NightMoon.png */; };
+		6DD7A6AE22CDFC9100D7DF7D /* NightRain.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD7A6AD22CDFC9100D7DF7D /* NightRain.png */; };
+		6DD7A6B022CDFCA300D7DF7D /* Fog.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD7A6AF22CDFCA300D7DF7D /* Fog.png */; };
+		6DD7A6B222CDFCBC00D7DF7D /* Overcast.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD7A6B122CDFCBC00D7DF7D /* Overcast.png */; };
+		6DD7A6B422CDFCD900D7DF7D /* Ice.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD7A6B322CDFCD900D7DF7D /* Ice.png */; };
+		6DD7A6B622CDFCED00D7DF7D /* Sleet.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD7A6B522CDFCED00D7DF7D /* Sleet.png */; };
+		6DD7A6B822CDFD0100D7DF7D /* Hail.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD7A6B722CDFD0100D7DF7D /* Hail.png */; };
+		6DD7A6BA22CDFD1F00D7DF7D /* StrongWind.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DD7A6B922CDFD1F00D7DF7D /* StrongWind.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,9 +49,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6DD2834322CE7CAA00215CB7 /* WeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCell.swift; sourceTree = "<group>"; };
+		6DD2834522CEABD700215CB7 /* Raining.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Raining.png; sourceTree = "<group>"; };
+		6DD2834922CEAFAC00215CB7 /* PartlyCloudy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PartlyCloudy.png; sourceTree = "<group>"; };
+		6DD2834B22CEAFF500215CB7 /* PartlyCloudNight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PartlyCloudNight.png; sourceTree = "<group>"; };
+		6DD2834D22CEB0F200215CB7 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		6DD2835122CEC11800215CB7 /* baseline_refresh_white_36dp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = baseline_refresh_white_36dp.png; sourceTree = "<group>"; };
+		6DD2835322CEC51100215CB7 /* GetWeatherImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWeatherImage.swift; sourceTree = "<group>"; };
 		6DD7A67222CD418D00D7DF7D /* Weatherman Kyle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Weatherman Kyle.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DD7A67522CD418D00D7DF7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6DD7A67722CD418D00D7DF7D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6DD7A67722CD418D00D7DF7D /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 		6DD7A67A22CD418D00D7DF7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6DD7A67D22CD418D00D7DF7D /* Weatherman_Kyle.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Weatherman_Kyle.xcdatamodel; sourceTree = "<group>"; };
 		6DD7A67F22CD418E00D7DF7D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -38,6 +67,21 @@
 		6DD7A68922CD418E00D7DF7D /* Weatherman KyleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Weatherman KyleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DD7A68D22CD418E00D7DF7D /* Weatherman_KyleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weatherman_KyleTests.swift; sourceTree = "<group>"; };
 		6DD7A68F22CD418E00D7DF7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6DD7A69B22CD431B00D7DF7D /* RestConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestConnector.swift; sourceTree = "<group>"; };
+		6DD7A69D22CD442F00D7DF7D /* RestDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestDelegate.swift; sourceTree = "<group>"; };
+		6DD7A6A022CDE1C800D7DF7D /* thermometer1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thermometer1.png; sourceTree = "<group>"; };
+		6DD7A6A222CDE31800D7DF7D /* Clouds Background.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Clouds Background.jpeg"; sourceTree = "<group>"; };
+		6DD7A6A522CDF10600D7DF7D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		6DD7A6A722CDFA2000D7DF7D /* Sunny.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sunny.png; sourceTree = "<group>"; };
+		6DD7A6A922CDFBB000D7DF7D /* OccasionalSnow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OccasionalSnow.png; sourceTree = "<group>"; };
+		6DD7A6AB22CDFBD900D7DF7D /* NightMoon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NightMoon.png; sourceTree = "<group>"; };
+		6DD7A6AD22CDFC9100D7DF7D /* NightRain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NightRain.png; sourceTree = "<group>"; };
+		6DD7A6AF22CDFCA300D7DF7D /* Fog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fog.png; sourceTree = "<group>"; };
+		6DD7A6B122CDFCBC00D7DF7D /* Overcast.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Overcast.png; sourceTree = "<group>"; };
+		6DD7A6B322CDFCD900D7DF7D /* Ice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ice.png; sourceTree = "<group>"; };
+		6DD7A6B522CDFCED00D7DF7D /* Sleet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sleet.png; sourceTree = "<group>"; };
+		6DD7A6B722CDFD0100D7DF7D /* Hail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Hail.png; sourceTree = "<group>"; };
+		6DD7A6B922CDFD1F00D7DF7D /* StrongWind.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StrongWind.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DD7A6A622CDF10600D7DF7D /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,12 +103,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6DD2834222CE4B8B00215CB7 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				6DD2834322CE7CAA00215CB7 /* WeatherCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		6DD7A66922CD418D00D7DF7D = {
 			isa = PBXGroup;
 			children = (
 				6DD7A67422CD418D00D7DF7D /* Weatherman Kyle */,
 				6DD7A68C22CD418E00D7DF7D /* Weatherman KyleTests */,
 				6DD7A67322CD418D00D7DF7D /* Products */,
+				6DD7A6A422CDF10600D7DF7D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,8 +133,12 @@
 		6DD7A67422CD418D00D7DF7D /* Weatherman Kyle */ = {
 			isa = PBXGroup;
 			children = (
+				6DD2834222CE4B8B00215CB7 /* Cells */,
+				6DD7A69F22CDE1AF00D7DF7D /* Images */,
+				6DD7A69A22CD41C200D7DF7D /* Tools */,
+				6DD7A69922CD41B900D7DF7D /* Screens */,
+				6DD7A69822CD41A700D7DF7D /* Rest */,
 				6DD7A67522CD418D00D7DF7D /* AppDelegate.swift */,
-				6DD7A67722CD418D00D7DF7D /* ViewController.swift */,
 				6DD7A67922CD418D00D7DF7D /* Main.storyboard */,
 				6DD7A67F22CD418E00D7DF7D /* Assets.xcassets */,
 				6DD7A68122CD418E00D7DF7D /* LaunchScreen.storyboard */,
@@ -97,6 +155,63 @@
 				6DD7A68F22CD418E00D7DF7D /* Info.plist */,
 			);
 			path = "Weatherman KyleTests";
+			sourceTree = "<group>";
+		};
+		6DD7A69822CD41A700D7DF7D /* Rest */ = {
+			isa = PBXGroup;
+			children = (
+				6DD7A69B22CD431B00D7DF7D /* RestConnector.swift */,
+				6DD7A69D22CD442F00D7DF7D /* RestDelegate.swift */,
+			);
+			path = Rest;
+			sourceTree = "<group>";
+		};
+		6DD7A69922CD41B900D7DF7D /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				6DD7A67722CD418D00D7DF7D /* Main.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		6DD7A69A22CD41C200D7DF7D /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				6DD2835322CEC51100215CB7 /* GetWeatherImage.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		6DD7A69F22CDE1AF00D7DF7D /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				6DD2835122CEC11800215CB7 /* baseline_refresh_white_36dp.png */,
+				6DD7A6AB22CDFBD900D7DF7D /* NightMoon.png */,
+				6DD7A6A922CDFBB000D7DF7D /* OccasionalSnow.png */,
+				6DD7A6AF22CDFCA300D7DF7D /* Fog.png */,
+				6DD2834B22CEAFF500215CB7 /* PartlyCloudNight.png */,
+				6DD7A6B522CDFCED00D7DF7D /* Sleet.png */,
+				6DD7A6AD22CDFC9100D7DF7D /* NightRain.png */,
+				6DD2834D22CEB0F200215CB7 /* Default.png */,
+				6DD2834922CEAFAC00215CB7 /* PartlyCloudy.png */,
+				6DD2834522CEABD700215CB7 /* Raining.png */,
+				6DD7A6B922CDFD1F00D7DF7D /* StrongWind.png */,
+				6DD7A6B722CDFD0100D7DF7D /* Hail.png */,
+				6DD7A6A722CDFA2000D7DF7D /* Sunny.png */,
+				6DD7A6B122CDFCBC00D7DF7D /* Overcast.png */,
+				6DD7A6B322CDFCD900D7DF7D /* Ice.png */,
+				6DD7A6A222CDE31800D7DF7D /* Clouds Background.jpeg */,
+				6DD7A6A022CDE1C800D7DF7D /* thermometer1.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		6DD7A6A422CDF10600D7DF7D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6DD7A6A522CDF10600D7DF7D /* CoreLocation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,9 +295,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DD7A6A122CDE1C800D7DF7D /* thermometer1.png in Resources */,
 				6DD7A68322CD418E00D7DF7D /* LaunchScreen.storyboard in Resources */,
+				6DD2834C22CEAFF500215CB7 /* PartlyCloudNight.png in Resources */,
+				6DD7A6BA22CDFD1F00D7DF7D /* StrongWind.png in Resources */,
 				6DD7A68022CD418E00D7DF7D /* Assets.xcassets in Resources */,
+				6DD7A6B822CDFD0100D7DF7D /* Hail.png in Resources */,
+				6DD7A6B422CDFCD900D7DF7D /* Ice.png in Resources */,
+				6DD2834622CEABD700215CB7 /* Raining.png in Resources */,
+				6DD7A6AC22CDFBD900D7DF7D /* NightMoon.png in Resources */,
+				6DD7A6B622CDFCED00D7DF7D /* Sleet.png in Resources */,
 				6DD7A67B22CD418D00D7DF7D /* Main.storyboard in Resources */,
+				6DD2834E22CEB0F200215CB7 /* Default.png in Resources */,
+				6DD7A6A322CDE31800D7DF7D /* Clouds Background.jpeg in Resources */,
+				6DD7A6B022CDFCA300D7DF7D /* Fog.png in Resources */,
+				6DD7A6AA22CDFBB000D7DF7D /* OccasionalSnow.png in Resources */,
+				6DD7A6A822CDFA2000D7DF7D /* Sunny.png in Resources */,
+				6DD2834A22CEAFAC00215CB7 /* PartlyCloudy.png in Resources */,
+				6DD7A6AE22CDFC9100D7DF7D /* NightRain.png in Resources */,
+				6DD7A6B222CDFCBC00D7DF7D /* Overcast.png in Resources */,
+				6DD2835222CEC11800215CB7 /* baseline_refresh_white_36dp.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,9 +332,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DD7A67822CD418D00D7DF7D /* ViewController.swift in Sources */,
+				6DD7A67822CD418D00D7DF7D /* Main.swift in Sources */,
 				6DD7A67E22CD418D00D7DF7D /* Weatherman_Kyle.xcdatamodeld in Sources */,
+				6DD2834422CE7CAA00215CB7 /* WeatherCell.swift in Sources */,
 				6DD7A67622CD418D00D7DF7D /* AppDelegate.swift in Sources */,
+				6DD2835422CEC51100215CB7 /* GetWeatherImage.swift in Sources */,
+				6DD7A69E22CD442F00D7DF7D /* RestDelegate.swift in Sources */,
+				6DD7A69C22CD431B00D7DF7D /* RestConnector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,6 +503,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RC85Z5UT49;
 				INFOPLIST_FILE = "Weatherman Kyle/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -374,7 +511,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "co.za.Kyle.Weatherman-Kyle";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -385,6 +522,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RC85Z5UT49;
 				INFOPLIST_FILE = "Weatherman Kyle/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -392,7 +530,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "co.za.Kyle.Weatherman-Kyle";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
