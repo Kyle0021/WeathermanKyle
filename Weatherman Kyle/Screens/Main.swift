@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 import CoreLocation
 
-class Main: UIViewController, RestDelegate, CLLocationManagerDelegate, UICollectionViewDelegate, UICollectionViewDataSource  {
+class Main: UIViewController, RestDelegate, CLLocationManagerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate  {
     
     //Linked UI Objects
     @IBOutlet var lblLocation: UILabel!
@@ -22,32 +22,82 @@ class Main: UIViewController, RestDelegate, CLLocationManagerDelegate, UICollect
     @IBOutlet var loadingView: UIView!
     @IBOutlet var btnRefresh: UIButton!
     @IBOutlet var weatherImage: UIImageView!
+    @IBOutlet var btnSearch: UIButton!
+    @IBOutlet var searchBar: UISearchBar!
     
     //Location stuff
     let locationManager = CLLocationManager()
+    let units = "si"
     
     //Storage Vars
     var currentWeatherData: NSDictionary!
     var dailyWeatherData: [NSDictionary]!
     var currentLocation: CLLocation!
     
+    //UserDefaults if user chooses to not use their own location
+    let defaults = UserDefaults.standard
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
         // On start-up show the loading view while the data is being prepared.
+        searchBar.delegate = self
+        searchBar.placeholder = "Enter your suburb or city name"
         loadingView.isHidden = false
         colView.isHidden = true
-        getLocation()
+        
+        
+        if defaults.value(forKey: "CustomLocation") != nil
+        {
+            if defaults.value(forKey: "CustomLocation") as! String == "true"
+            {
+                let connector = RestConnector(delegate: self)
+                connector.getMethod(lat: self.defaults.value(forKey: "Latitude") as! Double, lon: self.defaults.value(forKey: "Longitude") as! Double, units: self.units)
+                self.lblLocation.text = defaults.value(forKey: "Location") as? String
+            }
+            else
+            {
+                getLocation()
+            }
+        }
+        else
+        {
+            getLocation()
+        }
     }
     
     // Allows the user to refresh their weather information
     @IBAction func actionRefresh(_ sender: Any)
     {
-        loadingView.isHidden = false
-        colView.isHidden = true
-        locationManager.stopUpdatingLocation()
-        getLocation()
+        if defaults.value(forKey: "CustomLocation") != nil
+        {
+            let alert = UIAlertController(title: "Update Weather Forecast", message: "You can refresh the current weather forecast or fetch the Weather forecast for your currrent location", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Refresh", style: .default, handler: { action in
+                
+                let connector = RestConnector(delegate: self)
+                connector.getMethod(lat: self.defaults.value(forKey: "Latitude") as! Double, lon: self.defaults.value(forKey: "Longitude") as! Double, units: self.units)
+                
+            }))
+            alert.addAction(UIAlertAction(title: "Current Location", style: .default, handler: { action in
+                
+                self.defaults.setValue("false", forKeyPath: "CustomLocation")
+                
+                self.loadingView.isHidden = false
+                self.colView.isHidden = true
+                self.locationManager.stopUpdatingLocation()
+                self.getLocation()
+                
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }
+        else
+        {
+            self.loadingView.isHidden = false
+            self.colView.isHidden = true
+            self.locationManager.stopUpdatingLocation()
+            self.getLocation()
+        }
     }
     
     // Results that came from API call
@@ -126,16 +176,15 @@ class Main: UIViewController, RestDelegate, CLLocationManagerDelegate, UICollect
 
         let lat = locValue.latitude
         let lon = locValue.longitude
-        let units = "si"
         
         let connector = RestConnector(delegate: self)
         connector.getMethod(lat: lat, lon: lon, units: units)
-        getPlace(location: manager.location!)
+        getPlaceFromCoordinates(location: manager.location!)
     }
     
      // Geocode gets the address of the current location using the coordinates, that address has properties that give us the suburb and province.
     // The location label is then updated with the new user readable location.
-    func getPlace(location:CLLocation)
+    func getPlaceFromCoordinates(location:CLLocation)
     {
         let geocoder = CLGeocoder()
         
@@ -155,6 +204,7 @@ class Main: UIViewController, RestDelegate, CLLocationManagerDelegate, UICollect
                     }
                 
                 self.lblLocation.text = addressString
+                self.defaults.setValue(addressString, forKeyPath: "Location")
             }
         })
     }
@@ -207,6 +257,62 @@ class Main: UIViewController, RestDelegate, CLLocationManagerDelegate, UICollect
         cell.frame.origin.x = 0
         
         return cell
+    }
+    
+    @IBAction func tapSearch(_ sender: Any)
+    {
+        searchBar.isHidden = false
+        searchBar.becomeFirstResponder()
+    }
+    
+    func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool
+    {
+        self.searchBar.isHidden = true
+        getCoordinatesFromPlace(place: searchBar.text!)
+        
+        return true
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar)
+    {
+        self.searchBar.isHidden = true
+        getCoordinatesFromPlace(place: searchBar.text!)
+    }
+    
+    func getCoordinatesFromPlace(place: String)
+    {
+        let geoCoder = CLGeocoder()
+        geoCoder.geocodeAddressString(place) { (placemarks, error) in
+            guard
+                let placemarks = placemarks,
+                let location = placemarks.first?.location
+                else {
+                    
+                    let alert = UIAlertController(title: "Location Search", message: "We were unable to match a geograhical location. Please try again.", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                        self.searchBar.isHidden = false
+                        self.searchBar.becomeFirstResponder()
+                    }))
+                    self.present(alert, animated: true, completion: nil)
+                    
+                    return
+            }
+            
+            // update weather information based on entered location.
+            self.searchBar.isHidden = true
+            
+            let locationObject = CLLocation.init(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+            
+            self.getPlaceFromCoordinates(location: locationObject)
+            
+            self.defaults.setValue("true", forKeyPath: "CustomLocation")
+            self.defaults.setValue(location.coordinate.latitude, forKeyPath: "Latitude")
+            self.defaults.setValue(location.coordinate.longitude, forKeyPath: "Longitude")
+            
+            let connector = RestConnector(delegate: self)
+            connector.getMethod(lat: locationObject.coordinate.latitude, lon: locationObject.coordinate.longitude, units: self.units)
+        }
+        
     }
 }
 

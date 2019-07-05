@@ -47,15 +47,40 @@
                                         <nil key="highlightedColor"/>
                                         <color key="shadowColor" red="0.56078431370000004" green="0.5568627451" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OWi-Wf-ahN">
+                                        <rect key="frame" x="8" y="10" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="HmU-qb-VWl"/>
+                                            <constraint firstAttribute="height" constant="40" id="voA-jX-EAB"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="4" minY="4" maxX="4" maxY="2"/>
+                                        <state key="normal" image="Search.png"/>
+                                        <connections>
+                                            <action selector="tapSearch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jLE-7a-sEk"/>
+                                        </connections>
+                                    </button>
+                                    <searchBar hidden="YES" contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="KdQ-xc-odV">
+                                        <rect key="frame" x="0.0" y="8" width="414" height="44"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </searchBar>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="2jj-u3-P6h" firstAttribute="leading" secondItem="OWi-Wf-ahN" secondAttribute="trailing" constant="20" id="1h2-TS-Hl6"/>
                                     <constraint firstItem="x4Q-pW-yRB" firstAttribute="top" secondItem="04V-eS-o5Z" secondAttribute="top" constant="10" id="1v1-cG-kCu"/>
                                     <constraint firstAttribute="bottom" secondItem="2jj-u3-P6h" secondAttribute="bottom" constant="13.5" id="2ZZ-3C-bt2"/>
                                     <constraint firstAttribute="trailing" secondItem="x4Q-pW-yRB" secondAttribute="trailing" constant="8" id="6Dt-WA-DMV"/>
                                     <constraint firstItem="x4Q-pW-yRB" firstAttribute="leading" secondItem="2jj-u3-P6h" secondAttribute="trailing" constant="20" id="9u9-7V-0kC"/>
                                     <constraint firstItem="2jj-u3-P6h" firstAttribute="leading" secondItem="04V-eS-o5Z" secondAttribute="leading" constant="68" id="HB6-Ax-cyC"/>
                                     <constraint firstAttribute="bottom" secondItem="x4Q-pW-yRB" secondAttribute="bottom" constant="10" id="OJV-QL-ODZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="KdQ-xc-odV" secondAttribute="bottom" constant="8" id="Q6R-oD-8Q6"/>
+                                    <constraint firstAttribute="trailing" secondItem="KdQ-xc-odV" secondAttribute="trailing" id="Z1t-Or-Gs0"/>
+                                    <constraint firstItem="OWi-Wf-ahN" firstAttribute="leading" secondItem="04V-eS-o5Z" secondAttribute="leading" constant="8" id="Zig-Ph-rMp"/>
+                                    <constraint firstItem="KdQ-xc-odV" firstAttribute="top" secondItem="04V-eS-o5Z" secondAttribute="top" constant="8" id="bwT-mj-VXX"/>
+                                    <constraint firstItem="OWi-Wf-ahN" firstAttribute="top" secondItem="04V-eS-o5Z" secondAttribute="top" constant="10" id="dhW-w6-ht7"/>
+                                    <constraint firstAttribute="bottom" secondItem="OWi-Wf-ahN" secondAttribute="bottom" constant="10" id="hGF-s3-R7Z"/>
+                                    <constraint firstItem="KdQ-xc-odV" firstAttribute="leading" secondItem="04V-eS-o5Z" secondAttribute="leading" id="nNw-zz-Pjr"/>
                                     <constraint firstItem="2jj-u3-P6h" firstAttribute="top" secondItem="04V-eS-o5Z" secondAttribute="top" constant="14" id="pmj-UF-Jk6"/>
                                 </constraints>
                             </view>
@@ -276,6 +301,7 @@
                     </view>
                     <connections>
                         <outlet property="btnRefresh" destination="x4Q-pW-yRB" id="4nJ-nd-kS8"/>
+                        <outlet property="btnSearch" destination="OWi-Wf-ahN" id="SYQ-XX-NiY"/>
                         <outlet property="colView" destination="j7x-fn-0Eo" id="YgB-ne-K3k"/>
                         <outlet property="lblCurrentTemp" destination="1UN-2s-D4u" id="GfC-f6-ESd"/>
                         <outlet property="lblHumidity" destination="rKq-9N-ecT" id="u8m-w7-6J6"/>
@@ -283,6 +309,7 @@
                         <outlet property="lblSummaryConditions" destination="KJo-Qj-Xoe" id="SWX-fJ-ckY"/>
                         <outlet property="lblWind" destination="wnc-Xd-FET" id="yBS-eh-cdP"/>
                         <outlet property="loadingView" destination="akJ-gT-tB4" id="wKa-9i-YlN"/>
+                        <outlet property="searchBar" destination="KdQ-xc-odV" id="dQ6-w8-kwZ"/>
                         <outlet property="weatherImage" destination="grJ-YJ-9Xw" id="kPI-Sz-Tal"/>
                     </connections>
                 </viewController>
@@ -293,6 +320,7 @@
     </scenes>
     <resources>
         <image name="Clouds Background.jpeg" width="802" height="1002"/>
+        <image name="Search.png" width="138.46153259277344" height="138.46153259277344"/>
         <image name="Sunny.png" width="128" height="128"/>
         <image name="baseline_refresh_white_36dp.png" width="36" height="36"/>
     </resources>
