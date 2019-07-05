@@ -284,6 +284,7 @@ class Main: UIViewController, RestDelegate, CLLocationManagerDelegate, UICollect
     {
         self.searchBar.endEditing(true)
         self.searchBar.isHidden = true
+        self.loadingView.isHidden = false
         getCoordinatesFromPlace(place: searchBar.text!)
     }
     
