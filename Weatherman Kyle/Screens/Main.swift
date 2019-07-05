@@ -261,22 +261,38 @@ class Main: UIViewController, RestDelegate, CLLocationManagerDelegate, UICollect
     
     @IBAction func tapSearch(_ sender: Any)
     {
+        searchBar.text = ""
         searchBar.isHidden = false
         searchBar.becomeFirstResponder()
     }
     
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar)
+    {
+        searchBar.setShowsCancelButton(true, animated: true)
+    }
+    
     func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool
     {
+        self.searchBar.endEditing(true)
+        searchBar.setShowsCancelButton(true, animated: true)
         self.searchBar.isHidden = true
-        getCoordinatesFromPlace(place: searchBar.text!)
         
         return true
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar)
     {
+        self.searchBar.endEditing(true)
         self.searchBar.isHidden = true
         getCoordinatesFromPlace(place: searchBar.text!)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar)
+    {
+        self.searchBar.endEditing(true)
+        searchBar.text = ""
+        searchBar.isHidden = true
+        
     }
     
     func getCoordinatesFromPlace(place: String)
