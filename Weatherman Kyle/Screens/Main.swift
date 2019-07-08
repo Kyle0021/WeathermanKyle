@@ -259,6 +259,7 @@ class Main: UIViewController, RestDelegate, CLLocationManagerDelegate, UICollect
         return cell
     }
     
+    // Makes the searchbar available
     @IBAction func tapSearch(_ sender: Any)
     {
         searchBar.text = ""
@@ -266,6 +267,7 @@ class Main: UIViewController, RestDelegate, CLLocationManagerDelegate, UICollect
         searchBar.becomeFirstResponder()
     }
     
+    // SearchBar delegate methods
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar)
     {
         searchBar.setShowsCancelButton(true, animated: true)
@@ -295,7 +297,9 @@ class Main: UIViewController, RestDelegate, CLLocationManagerDelegate, UICollect
         searchBar.isHidden = true
         
     }
+    // -- end of searchbar delegate methods
     
+    // this method allows me to get the coordinates from an address
     func getCoordinatesFromPlace(place: String)
     {
         let geoCoder = CLGeocoder()
