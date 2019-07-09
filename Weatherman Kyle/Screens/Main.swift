@@ -24,6 +24,9 @@ class Main: UIViewController, RestDelegate, CLLocationManagerDelegate, UICollect
     @IBOutlet var weatherImage: UIImageView!
     @IBOutlet var btnSearch: UIButton!
     @IBOutlet var searchBar: UISearchBar!
+    @IBOutlet var currentWeatherContainer: UIView!
+    let btnHide = UIButton()
+    let btnShow = UIButton()
     
     //Location stuff
     let locationManager = CLLocationManager()
@@ -37,6 +40,9 @@ class Main: UIViewController, RestDelegate, CLLocationManagerDelegate, UICollect
     //UserDefaults if user chooses to not use their own location
     let defaults = UserDefaults.standard
     
+    //minimise current weather container
+    var minimize = false
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -46,8 +52,7 @@ class Main: UIViewController, RestDelegate, CLLocationManagerDelegate, UICollect
         searchBar.placeholder = "Enter your suburb or city name"
         loadingView.isHidden = false
         colView.isHidden = true
-        
-        
+
         if defaults.value(forKey: "CustomLocation") != nil
         {
             if defaults.value(forKey: "CustomLocation") as! String == "true"
@@ -65,6 +70,76 @@ class Main: UIViewController, RestDelegate, CLLocationManagerDelegate, UICollect
         {
             getLocation()
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool)
+    {
+        // Collapse button
+        // shrinks the container the displays the current weather, so that it is easier to view the forecasted weather on smaller screen sizes
+        btnHide.frame.size.height = 40
+        btnHide.frame.size.width = 40
+        btnHide.imageEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        btnHide.setImage(UIImage(named: "Up.png"), for: .normal)
+        btnHide.frame.origin.x = currentWeatherContainer.frame.width - 50
+        btnHide.frame.origin.y = currentWeatherContainer.frame.origin.y + 8
+        self.view.addSubview(btnHide)
+        btnHide.addTarget(self, action: #selector(collapseView(sender:)), for: .touchUpInside)
+
+        btnShow.frame.size.height = 40
+        btnShow.frame.size.width = 40
+        btnShow.imageEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        btnShow.setImage(UIImage(named: "Down.png"), for: .normal)
+        btnShow.frame.origin.x = currentWeatherContainer.frame.width - 50
+        btnShow.frame.origin.y = currentWeatherContainer.frame.origin.y + 8
+        btnShow.isHidden = true
+        self.view.addSubview(btnShow)
+        btnShow.addTarget(self, action: #selector(showView(sender:)), for: .touchUpInside)
+    }
+    
+    override func viewDidLayoutSubviews()
+    {
+        // because of autolayout constaints, I have to make sure the views update their positions
+        if !minimize
+        {
+            btnHide.isHidden = false
+            btnShow.isHidden = true
+            currentWeatherContainer.isHidden = false
+            btnHide.setImage(UIImage(named: "Up.png"), for: .normal)
+            self.colView.frame.origin.y = currentWeatherContainer.frame.origin.y + currentWeatherContainer.frame.size.height
+            colView.frame.size.height = 458
+        }
+        else
+        {
+            btnHide.isHidden = true
+            btnShow.isHidden = false
+            currentWeatherContainer.isHidden = true
+            btnHide.setImage(UIImage(named: "Down.png"), for: .normal)
+            colView.frame.origin.y = currentWeatherContainer.frame.origin.y
+            colView.frame.size.height = currentWeatherContainer.frame.size.height + colView.frame.size.height
+        }
+    }
+    
+    // Hides the current weather view, moves the collectionview up and increases the collectionview's height.
+    // makes viewing forecasted weather easier on smaller screens like an iphone 6
+    @objc func collapseView(sender: UIButton)
+    {
+        sender.isHidden = true
+        btnShow.isHidden = false
+        minimize = true
+        currentWeatherContainer.isHidden = true
+        colView.frame.origin.y = currentWeatherContainer.frame.origin.y
+        colView.frame.size.height = currentWeatherContainer.frame.size.height + colView.frame.size.height
+    }
+    
+    // shows the current weather view, moves the collectionview back to it's original position and decreases the collectionview's height.
+    @objc func showView(sender: UIButton)
+    {
+        sender.isHidden = true
+        btnHide.isHidden = false
+        minimize = false
+        currentWeatherContainer.isHidden = false
+        self.colView.frame.origin.y = currentWeatherContainer.frame.origin.y + currentWeatherContainer.frame.size.height
+        colView.frame.size.height = 458
     }
     
     // Allows the user to refresh their weather information
