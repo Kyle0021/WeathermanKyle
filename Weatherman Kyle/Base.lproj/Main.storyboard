@@ -48,10 +48,10 @@
                                         <color key="shadowColor" red="0.56078431370000004" green="0.5568627451" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OWi-Wf-ahN">
-                                        <rect key="frame" x="8" y="15" width="30" height="30"/>
+                                        <rect key="frame" x="8" y="12" width="35" height="35"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="30" id="HmU-qb-VWl"/>
-                                            <constraint firstAttribute="height" constant="30" id="voA-jX-EAB"/>
+                                            <constraint firstAttribute="width" constant="35" id="HmU-qb-VWl"/>
+                                            <constraint firstAttribute="height" constant="35" id="voA-jX-EAB"/>
                                         </constraints>
                                         <state key="normal" image="Search.png"/>
                                         <connections>
@@ -77,8 +77,8 @@
                                     <constraint firstAttribute="trailing" secondItem="KdQ-xc-odV" secondAttribute="trailing" id="Z1t-Or-Gs0"/>
                                     <constraint firstItem="OWi-Wf-ahN" firstAttribute="leading" secondItem="04V-eS-o5Z" secondAttribute="leading" constant="8" id="Zig-Ph-rMp"/>
                                     <constraint firstItem="KdQ-xc-odV" firstAttribute="top" secondItem="04V-eS-o5Z" secondAttribute="top" constant="8" id="bwT-mj-VXX"/>
-                                    <constraint firstItem="OWi-Wf-ahN" firstAttribute="top" secondItem="04V-eS-o5Z" secondAttribute="top" constant="15.108179419525072" id="dhW-w6-ht7"/>
-                                    <constraint firstAttribute="bottom" secondItem="OWi-Wf-ahN" secondAttribute="bottom" constant="14.891820580474928" id="hGF-s3-R7Z"/>
+                                    <constraint firstItem="OWi-Wf-ahN" firstAttribute="top" secondItem="04V-eS-o5Z" secondAttribute="top" constant="12" id="dhW-w6-ht7"/>
+                                    <constraint firstAttribute="bottom" secondItem="OWi-Wf-ahN" secondAttribute="bottom" constant="13" id="hGF-s3-R7Z"/>
                                     <constraint firstItem="KdQ-xc-odV" firstAttribute="leading" secondItem="04V-eS-o5Z" secondAttribute="leading" id="nNw-zz-Pjr"/>
                                     <constraint firstItem="2jj-u3-P6h" firstAttribute="top" secondItem="04V-eS-o5Z" secondAttribute="top" constant="14" id="pmj-UF-Jk6"/>
                                 </constraints>
